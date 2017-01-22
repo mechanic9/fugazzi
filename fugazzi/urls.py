@@ -13,16 +13,24 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import include, url
 from django.contrib import admin
-from fugazzi.views import homepage, groupmovies, groupshows, viewmovies, viewshows, viewepisodes
+from fugazzi.views import homepage, groupmovies, groupshows, watch, viewshows
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home/$', homepage),
-    url(r'^movies/$', groupmovies),
-    url(r'^shows/$', groupshows),
-    url(r'^movies/view$', viewmovies),
-    url(r'^shows/view$', viewshows),
-    url(r'^episodes/view$', viewepisodes),
+    #Home Urls
+    url(r'', include([
+        url(r'^$', homepage),
+        #Movie urls
+        url(r'^movies/', include([
+            url(r'^$', groupmovies),
+        ])),
+        #Tv Show urls
+        url(r'^shows/', include([
+            url(r'^$', groupshows),
+            url(r'^(?P<title>[\w\ ]+)$', viewshows),
+        ])),
+        url(r'^(?P<tab>\w+)/(?P<title>[\w\ ]+)/watch', watch),
+    ])),
 ]

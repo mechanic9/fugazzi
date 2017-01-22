@@ -4,6 +4,11 @@
   background-color: #000;
 }
 
+.bg-purp
+{
+  background-color: #00000d;/*11*/
+}
+
 .bg-dark-gray
 {
   background-color: #212121;
@@ -130,6 +135,7 @@ height:100%;
 padding:5 5 0 5;
 overflow:hidden;
 }
+
 .topcontent-x
 {
 border:1px solid #000;
@@ -137,8 +143,10 @@ background: #1d1d1c;
 background:-web-kit-linear-gradient(#363634, #000000);
 background:-moz-linear-gradient(#363634, #000000);
 background:linear-gradient(#363634, #000000);
-width:170px;
-height:310px;
+max-width:170px;
+min-width:100px;
+max-height:310px;
+min-height:250px;
 font-size:12px;
 color:#303030;
 padding:3px;
@@ -259,7 +267,6 @@ cursor:pointer;
 box-shadow: 0px 10px 10px #0b0b0b;
 }
 
-
 #foot
 {
   background-color: #000;
@@ -267,12 +274,12 @@ box-shadow: 0px 10px 10px #0b0b0b;
   border-top-color: #212121;
   border-top-width: 1px;
   position: relative;
-  bottom: 0;
-	margin-top:10%;
+  bottom: 0; !important
+	margin-top:1%;
   height: 50px;
   padding: 10px;
   text-align: center;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 14px;
-	color: #909090;
+	font-size: 13px;
+	color: #39393a;
 }

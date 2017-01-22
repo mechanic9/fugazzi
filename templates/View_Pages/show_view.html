@@ -79,7 +79,7 @@
               </div>
           </header>
 
-    <!-- Movies Grid Section -->
+    <!--Content Section -->
     <section id="content">
       <!--Main Content Container -->
       <div class="container">
@@ -91,65 +91,34 @@
           </div>
         </div> -->
           <!--Content Row -->
-        <div class="row row-centered">
-          <div  class="col-lg-12 col-centered" id = topcontent>
-            {% if top %}
-            {% for i in top %}
-              <div class = "topcontent-x col-lg-3 col-md-4 col-xs-6" style="margin:10px;">
-                <a href="{{ i.0 }}" title="{{ i.1 }}">
-                  <img src="{{ i.2 }}" class="img-fluid" />{{ i.3 }}</a>
-                  <div class=topcontenthover>{{ i.4 }}</div>
-                  <div class=topcontenthover2>{{ i.5 }}</div>
-              </div>
-            {% endfor %}
+        <div class="row" style="margin-bottom:20px;">
+          {% if info %}
+          <div  class="col-lg-12 text-center">
+               <img src ="{% static info.0 %}" ><!-- Image -->
+               <h><b><br>{{ info.1 }}</br></b></h><!-- Title -->
+               <!--<p>{{ info.2 }}</p>Summary-->
           </div>
+
+          <div  class="col-lg-12 text-center">
+          <ul>
+            {% for s in season_list %}
+            <li><h><b>Season {{ s.0 }}</b></h></li>
+              {% for e in s.1 %}
+              <li><a href={{e.1}}><!--Link--><p>Episode {{e.0}}<!--Title--></p></a></li>
+              {% endfor %}
+            {% endfor %}
+           </ul>
+            </div>
+
           {% else %}
             <div class='col-lg-12 text-center'  style="padding-bottom:250px;padding-top:250px;">
-              <p class='lead'> NO SAUCE :( </p>
+              <p class='lead'> NO TV SAUCE :( </p>
             </div>
           {% endif %}
-              <!--Page Nav Row -->
-              <div class="col-md-4" style="text-align:center;width:100%;">
-                <nav aria-label="Page navigation">
-  <ul class="pagination" style="background-color:#909090;">
-    <li>
-      <a href="{{ pg_q }}{{page|add:"-1"}}" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-      </a>
-    </li>
-    {% for i in page_list %}
-    <li><a href="{{ pg_q }}{{ i }}">{{i}}</a></li>
-    {% endfor %}
-    <li>
-      <a href="{{ pg_q }}{{page|add:"1"}}" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-      </a>
-    </li>
-  </ul>
-</nav>
-</div>
             </div>
 
       </div><!--container end-->
       </section>
-<!--
-      <div id = left>
-       <div id = latest >
-        <div class = block-title>Latest Releases</div>
-	 <div id= latestwrap>
- {% for i in latest %}
-	<div class = item>
-	     <a href="{{ i.0 }}">
-	       <div class = itemhover> <img src="{{ i.1 }}" title = "{{ i.2 }}"/>{{ i.3 }}</div>
-	     </a>
-	  </div>
-
- {% endfor %}--><!--item end-->
-	<!--</div>latestwrap end-->
-      <!-- </div>latest end-->
-
-  <!--  </div>left end-->
-    <!--</div> container end-->
 
         <footer id=foot>
           <div class="container">
