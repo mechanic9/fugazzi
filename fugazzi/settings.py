@@ -25,7 +25,7 @@ SECRET_KEY = 'pm!5(@qck_@*pai_xyyw+mu=)oon35u!(f0lpbcqwfz@yh+nj='
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bitplug.biz', 'bitplug.ng', '41.87.94.239']
 
 
 # Application definition

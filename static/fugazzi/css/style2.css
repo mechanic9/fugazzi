@@ -267,16 +267,22 @@ cursor:pointer;
 box-shadow: 0px 10px 10px #0b0b0b;
 }
 
+body
+{
+  margin-bottom: 50px;
+}
+
 #foot
 {
   background-color: #000;
   border-top-style: solid;
   border-top-color: #212121;
   border-top-width: 1px;
-  position: relative;
-  bottom: 0; !important
-	margin-top:1%;
+  position: absolute;
+  bottom: 0;
+  margin-top:1%;
   height: 50px;
+  width: 100%;
   padding: 10px;
   text-align: center;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
