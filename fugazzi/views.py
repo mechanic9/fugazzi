@@ -10,6 +10,7 @@ pg_limit = 2
 #Links
 movies = '/movies'
 shows = '/shows'
+img = '/img/'
 home = '/'
 
 
@@ -43,9 +44,9 @@ def homepage(request):
 
     #DB dict to template list
     for m in movs:
-        topcontent.append([table+title_pre+m.title+url_stat, m.title, m.image, m.title ,m.language, 'm.releaseyear'])
+        topcontent.append([table+title_pre+m.title+url_stat, m.title, img+m.image, m.title ,m.language, 'm.releaseyear'])
 
-    #topcontent = []
+    topcontent = [[table+title_pre+m.title+url_stat, m.title, img+'x.jpeg', m.title ,m.language, 'm.releaseyear']]*20
     #test = topcontent
     context = {'movies':movies, 'shows':shows,
 'home':home, 'top':topcontent, 'pg_q':page_q, 'page_list':page_list, 'page':page}
@@ -82,7 +83,7 @@ def groupmovies(request):
 
     #DB dict to template list
     for m in movs:
-        topcontent.append([table+title_pre+m.title+url_stat, m.title, m.image, m.title ,m.language, 'm.releaseyear'])
+        topcontent.append([table+title_pre+m.title+url_stat, m.title, img+m.image, m.title ,m.language, 'm.releaseyear'])
 
     #topcontent = []
     #test = topcontent
@@ -124,7 +125,7 @@ def groupshows(request):
     #DB dict to template list
     for m in series:
         url = table+title_pre+m.title
-        topcontent.append([url, m.title, m.image, m.title ,m.language, 'm.releaseyear'])
+        topcontent.append([url, m.title, img+m.image, m.title ,m.language, 'm.releaseyear'])
 
     #topcontent = []
     #test = topcontent
@@ -151,7 +152,7 @@ def watch(request, tab, title):
         entry = Movies.objects.get(title=title)
         link = entry.links.link
 
-    info = [entry.image, entry.title, link]
+    info = [img+entry.image, entry.title, link]
 
     context = {'movies':movies, 'shows':shows,
 'home':home, 'info':info}
@@ -184,7 +185,7 @@ def viewshows(request, title):
             link = url+s_pre+str(seasons[s].title)+glue+ep_pre+str(e.title) #Url with season and episode
             season_list[s][1].append([e.title, link])
 
-    info = [entry.image, entry.title]
+    info = [img+entry.image, entry.title]
 
     context = {'movies':movies, 'shows':shows,
 'home':home, 'info':info,'season_list':season_list, 'ep_list':ep_list}

@@ -26,104 +26,95 @@
     background-color: #CC3333;
  }
 
-.navbar-custom
-{
-  background-color: #222222;
-  border-color: transparent;
-}
-.navbar-custom .navbar-brand {
-  color: #fed136;
-  font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
-}
-.navbar-custom .navbar-brand:hover,
-.navbar-custom .navbar-brand:focus,
-.navbar-custom .navbar-brand:active,
-.navbar-custom .navbar-brand.active {
-  color: #fec503;
-}
-.navbar-custom .navbar-collapse {
-  border-color: rgba(255, 255, 255, 0.02);
-}
-.navbar-custom .navbar-toggle {
-  background-color: #fed136;.
-  border-color: #fed136;
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  color: white;
-  font-size: 12px;
-}
-.navbar-custom .navbar-toggle:hover,
-.navbar-custom .navbar-toggle:focus
-{
-  background-color: #fed136;
-}
-.navbar-custom .nav li a {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-weight: 400;
-  letter-spacing: 1px;
-  color: white;
-}
-.navbar-custom .nav li a:hover,
-.navbar-custom .nav li a:focus {
-  color: #fed136;
-  outline: none;
-}
-.navbar-custom .navbar-nav > .active > a {
-  border-radius: 0;
-  color: white;
-  background-color: #fed136;
-}
-.navbar-custom .navbar-nav > .active > a:hover,
-.navbar-custom .navbar-nav > .active > a:focus {
-  color: white;
-  background-color: #fec503;
-}
-@media (min-width: 768px)
-{
-  .navbar-custom
-  {
-    height:60px;
-    margin:0;
-    background-color: #000;
-    padding: 2px 0;
-    -webkit-transition: padding 0.3s;
-    -moz-transition: padding 0.3s;
-    transition: padding 0.3s;
-    border: none;
-    overflow: hidden;
-  }
+ .navbar-custom {
+   background-color: #222222;
+   border-color: transparent;
+ }
+ .navbar-custom .navbar-brand {
+   color: #fed136;
+   font-family: "Megrim", "Helvetica Neue", Helvetica, Arial, cursive;
+ }
+ .navbar-custom .navbar-brand:hover,
+ .navbar-custom .navbar-brand:focus,
+ .navbar-custom .navbar-brand:active,
+ .navbar-custom .navbar-brand.active {
+   color: #fec503;
+ }
 
-  .navbar-custom .navbar-brand
-  {
-    font-size: 2em;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    transition: all 0.3s;
-  }
+ .navbar-custom .navbar-collapse {
+   border-color: rgba(255, 255, 255, 0.02);
+ }
+ .navbar-custom .navbar-toggle {
+   background-color: #fed136;
+   border-color: #fed136;
+   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   text-transform: uppercase;
+   color: white;
+   font-size: 12px;
+ }
+ .navbar-custom .navbar-toggle:hover,
+ .navbar-custom .navbar-toggle:focus {
+   background-color: #fed136;
+ }
+ .navbar-custom .nav li a {
+   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+   text-transform: uppercase;
+   font-weight: 400;
+   letter-spacing: 1px;
+   color: white;
+ }
+ .navbar-custom .nav li a:hover,
+ .navbar-custom .nav li a:focus {
+   color: #fed136;
+   outline: none;
+ }
+ .navbar-custom .navbar-nav > .active > a {
+   border-radius: 0;
+   color: white;
+   background-color: #fed136;
+ }
+ .navbar-custom .navbar-nav > .active > a:hover,
+ .navbar-custom .navbar-nav > .active > a:focus {
+   color: white;
+   background-color: #fec503;
+ }
+ @media (min-width: 768px) {
+   .navbar-custom
+   {
+     background-color: transparent;
+     padding: 25px 0;
+     -webkit-transition: padding 0.3s;
+     -moz-transition: padding 0.3s;
+     transition: padding 0.3s;
+     border: none;
+   }
+   .navbar-custom .navbar-brand {
+     font-size: 2em;
+     -webkit-transition: all 0.3s;
+     -moz-transition: all 0.3s;
+     transition: all 0.3s;
+   }
+   .navbar-custom .navbar-nav > .active > a {
+     border-radius: 3px;
+   }
+ }
+ @media (min-width: 768px) {
+   .navbar-custom.affix {
+     background-color: #222222;
+     padding: 10px 0;
+   }
+   .navbar-custom.affix .navbar-brand {
+     font-size: 1.5em;
+   }
+ }
 
-  .navbar-custom .navbar-nav > .active > a
-  {
-    border-radius: 3px;
-  }
-}
-@media (min-width: 768px) {
-  .navbar-custom.affix {
-    background-color: #222222;
-    padding: 10px 0;
-  }
-  .navbar-custom.affix .navbar-brand {
-    font-size: 1.5em;
-  }
-}
 
-header
+#header
 {
   background-color: transparent;
 	position:relative;
-	width:auto;
-	height:100px;
-	margin:0;
+	margin:1px;
+  height: 150px; !important
 	overflow: hidden;
 }
 
@@ -139,10 +130,7 @@ overflow:hidden;
 .topcontent-x
 {
 border:1px solid #000;
-background: #1d1d1c;
-background:-web-kit-linear-gradient(#363634, #000000);
-background:-moz-linear-gradient(#363634, #000000);
-background:linear-gradient(#363634, #000000);
+background-color: #111111;
 max-width:170px;
 min-width:100px;
 max-height:310px;
@@ -183,20 +171,12 @@ text-decoration:none;
 text-decoration:none;
 color:#fff;
 }
-.topcontent-x img{
+.topcontent-x img
+{
 width:100%;
-height:90%;
+height:95%;
 margin-right:auto;
 }
-
-/*.topcontentlabel{
-background:url(../images/topcontentlabel.png) 0 0 no-repeat;
-width:40px;
-height:40px;
-position:absolute;
-top:7px;
-left:7px;
-}*/
 
 .topcontenthover{
 background:transparent;
@@ -267,6 +247,11 @@ cursor:pointer;
 box-shadow: 0px 10px 10px #0b0b0b;
 }
 
+#content
+{
+  margin-bottom: 50px;
+}
+
 #foot
 {
   background-color: #000;
@@ -274,9 +259,8 @@ box-shadow: 0px 10px 10px #0b0b0b;
   border-top-color: #212121;
   border-top-width: 1px;
   position: relative;
-  bottom: 0; !important
-	margin-top:1%;
-  height: 50px;
+  bottom: 0;!important
+  width: 100%;
   padding: 10px;
   text-align: center;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
