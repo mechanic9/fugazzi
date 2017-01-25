@@ -247,7 +247,11 @@ cursor:pointer;
 box-shadow: 0px 10px 10px #0b0b0b;
 }
 
+<<<<<<< HEAD
 #content
+=======
+body
+>>>>>>> adcce9f1e116aa3f8aa5ae56dcc63b0a7edc4745
 {
   margin-bottom: 50px;
 }
@@ -258,8 +262,15 @@ box-shadow: 0px 10px 10px #0b0b0b;
   border-top-style: solid;
   border-top-color: #212121;
   border-top-width: 1px;
+<<<<<<< HEAD
   position: relative;
   bottom: 0;!important
+=======
+  position: absolute;
+  bottom: 0;
+  margin-top:1%;
+  height: 50px;
+>>>>>>> adcce9f1e116aa3f8aa5ae56dcc63b0a7edc4745
   width: 100%;
   padding: 10px;
   text-align: center;
