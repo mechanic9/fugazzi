@@ -5,13 +5,14 @@ from fugazzi.models import Movies, Series, Upcoming, Popular, Season, Episodes
 from fugazzi.actions import getIndex, getHomeContent, getMovContent, getShowContent
 
 #Items on a page
-pg_limit = 2
+pg_limit = 18
 
 #Links
 movies = '/movies'
 shows = '/shows'
-img = '/img/'
 home = '/'
+img = '/img/'
+stat_home = 'fugazzi/'
 
 
 def homepage(request):
@@ -22,6 +23,8 @@ def homepage(request):
     page_arg = 'page'#Arg for get
     page_q = '?'+page_arg+'=' #Page query without value
     total_pgs = len(whole_db)/pg_limit #Total no of pages
+    if(len(whole_db) % pg_limit != 0):
+        total_pgs = total_pgs+1 #Total no of pages
     page_list = []
     for i in xrange(1, total_pgs+1):
         page_list.append(i)
@@ -46,10 +49,10 @@ def homepage(request):
     for m in movs:
         topcontent.append([table+title_pre+m.title+url_stat, m.title, img+m.image, m.title ,m.language, 'm.releaseyear'])
 
-    topcontent = [[table+title_pre+m.title+url_stat, m.title, img+'x.jpeg', m.title ,m.language, 'm.releaseyear']]*20
+    #topcontent = [[table+title_pre+m.title+url_stat, m.title, img+'x.jpeg', m.title ,m.language, 'm.releaseyear']]*20
     #test = topcontent
     context = {'movies':movies, 'shows':shows,
-'home':home, 'top':topcontent, 'pg_q':page_q, 'page_list':page_list, 'page':page}
+'home':home, 'stat':stat_home, 'top':topcontent, 'pg_q':page_q, 'page_list':page_list, 'page':page}
     return render(request, html, context)
 
 def groupmovies(request):
@@ -61,6 +64,8 @@ def groupmovies(request):
     page_arg = 'page'#Arg for get
     page_q = '?'+page_arg+'=' #Page query without value
     total_pgs = len(whole_db)/pg_limit #Total no of pages
+    if(len(whole_db) % pg_limit != 0):
+        total_pgs = total_pgs+1 #Total no of pages
     page_list = []
     for i in xrange(1, total_pgs+1):
         page_list.append(i)
@@ -88,7 +93,7 @@ def groupmovies(request):
     #topcontent = []
     #test = topcontent
     context = {'movies':movies, 'shows':shows,
-'home':home, 'top':topcontent, 'pg_q':page_q, 'page_list':page_list, 'page':page}
+'home':home, 'stat':stat_home, 'top':topcontent, 'pg_q':page_q, 'page_list':page_list, 'page':page}
     return render(request, html, context)
 
 def groupshows(request):
@@ -98,7 +103,9 @@ def groupshows(request):
     #Page vars for template
     page_arg = 'page'#Arg for get
     page_q = '?'+page_arg+'=' #Page query without value
-    total_pgs = len(whole_db)/pg_limit #Total no of pages
+    total_pgs = len(whole_db)/pg_limit
+    if(len(whole_db) % pg_limit != 0):
+        total_pgs = total_pgs+1 #Total no of pages
     page_list = []
     for i in xrange(1, total_pgs+1):
         page_list.append(i)
@@ -130,7 +137,7 @@ def groupshows(request):
     #topcontent = []
     #test = topcontent
     context = {'movies':movies, 'shows':shows,
-'home':home, 'top':topcontent, 'pg_q':page_q, 'page_list':page_list, 'page':page}
+'home':home, 'stat':stat_home, 'top':topcontent, 'pg_q':page_q, 'page_list':page_list, 'page':page}
     return render(request, html, context)
 
 def watch(request, tab, title):
@@ -155,7 +162,7 @@ def watch(request, tab, title):
     info = [img+entry.image, entry.title, link]
 
     context = {'movies':movies, 'shows':shows,
-'home':home, 'info':info}
+'home':home, 'stat':stat_home, 'info':info}
     return render(request, html, context)
 
 def viewshows(request, title):
@@ -188,5 +195,5 @@ def viewshows(request, title):
     info = [img+entry.image, entry.title]
 
     context = {'movies':movies, 'shows':shows,
-'home':home, 'info':info,'season_list':season_list, 'ep_list':ep_list}
+'home':home, 'stat':stat_home, 'info':info,'season_list':season_list, 'ep_list':ep_list}
     return render(request, html, context)

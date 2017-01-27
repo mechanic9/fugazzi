@@ -44,6 +44,7 @@
 
         <!-- Header -->
       <!-- Navigation -->
+      <div class="content-wrapper">
       <nav id="mainNav" class="navbar navbar-custom navbar-fixed-top">
           <div class="container">
               <!-- Brand and toggle get grouped for better mobile display -->
@@ -84,9 +85,9 @@
           </header>
 
     <!-- Movies Grid Section -->
-    <section id="content">
+    <section id="content" class="text-center">
       <!--Main Content Container -->
-      <div class="container-fluid">
+      <div class="container text-center">
         <!--Content Heading Row
         <div class="row">
           <div class="col-lg-12 text-center">
@@ -95,16 +96,17 @@
           </div>
         </div> -->
           <!--Content Row -->
-        <div class="row row-centered">
-          <div  class="col-lg-12 col-centered" id = topcontent>
+          <div class="row text-center">
+            <div class="col-lg-12 text-center">
             {% if top %}
             {% for i in top %}
-              <div class = "topcontent-x col-lg-3 col-md-4 col-xs-6" style="margin:10px;">
-                <a href="{{ i.0 }}" title="{{ i.1 }}">
-                  <img src="{% static i.2 %}" class="img-responsive" />{{ i.3 }}</a>
+              <div class = "topcontent-x col-lg-3 col-md-4 col-xs-4" style="margin:10px;">
+                  <a href="{{ i.0 }}">
+                  <img src="{% static i.2 %}" class="img img-responsive center" />{{ i.3 }}</a>
               </div>
             {% endfor %}
           </div>
+        </div>
               <!--Page Nav Row -->
               <div class="col-md-4" style="text-align:center;width:100%;height:100%;">
                 <nav aria-label="Page navigation">
@@ -153,7 +155,7 @@
   <!--  </div>left end-->
     <!--</div> container end-->
   <!-- jQuery -->
-
+</div>
 
       <footer id=foot>
         <div class="container">
